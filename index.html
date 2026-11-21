@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h2>StudentHub</h2>
+
+            <nav>
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">Dashboard</a>
+                <a href="#students" class="nav-link" data-page="students">All Students</a>
+                <a href="#favorites" class="nav-link" data-page="favorites">Favorites</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+            </nav>
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="header">
+                <div>
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p>Student Information Management System</p>
+                </div>
+
+                <button id="loadApiBtn" class="primary-btn">
+                    Load API Students
+                </button>
+            </header>
+
+
+            <!-- Dashboard -->
+            <section class="page-section" id="dashboard">
+
+                <div class="statistics">
+
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <h2 id="totalStudents">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Total Departments</h3>
+                        <h2 id="totalDepartments">8</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Male Students</h3>
+                        <h2 id="maleStudents">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Female Students</h3>
+                        <h2 id="femaleStudents">0</h2>
+                    </div>
+
+                </div>
+
+                <div class="student-section">
+                    <div class="section-header">
+                        <h2>Recent Students</h2>
+                        <p>Recently added student information</p>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Department</th>
+                                    <th>Semester</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentStudentsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- All Students -->
+            <section class="page-section hidden" id="students">
+
+                <div class="student-section">
+
+                    <div class="section-header">
+                        <h2>All Students</h2>
+                        <p>Search, filter and view student information</p>
+                    </div>
+
+                    <div class="filters">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search by name or ID..."
+                        >
+
+                        <select id="departmentFilter">
+                            <option value="">All Departments</option>
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="Civil">Civil</option>
+                            <option value="BBA">BBA</option>
+                            <option value="CCE">CCE</option>
+                            <option value="ETE">ETE</option>
+                            <option value="English">English</option>
+                            <option value="Pharmacy">Pharmacy</option>
+                        </select>
+
+                        <select id="sectionFilter">
+                            <option value="">All Sections</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                        </select>
+
+                        <select id="semesterFilter">
+                            <option value="">All Semesters</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select>
+
+                    </div>
+
+                    <p id="studentStatus" class="status-message"></p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Department</th>
+                                    <th>Section</th>
+                                    <th>Semester</th>
+                                    <th>Gender</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="studentTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Favorites -->
+            <section class="page-section hidden" id="favorites">
+
+                <div class="student-section">
+
+                    <div class="section-header">
+                        <h2>Favorite Students</h2>
+                        <p>Your saved student list</p>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Department</th>
+                                    <th>Section</th>
+                                    <th>Semester</th>
+                                    <th>Gender</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="favoriteTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- About -->
+            <section class="page-section hidden" id="about">
+
+                <div class="student-section about-section">
+                    <h2>About StudentHub</h2>
+
+                    <p>
+                        StudentHub is a Student Information Dashboard
+                        developed using HTML, CSS and JavaScript.
+                    </p>
+
+                    <p>
+                        It provides student search, filtering, student
+                        details, favorite management and API integration.
+                    </p>
+
+                    <p>
+                        Technologies: HTML, CSS, JavaScript, Fetch API
+                        and Local Storage.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Student Details Modal -->
+    <div class="modal" id="studentModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Student Details</h2>
+                <button id="closeModal">&times;</button>
+            </div>
+
+            <div class="student-details">
+                <p><strong>Name:</strong> <span id="detailName"></span></p>
+                <p><strong>Student ID:</strong> <span id="detailId"></span></p>
+                <p><strong>Department:</strong> <span id="detailDept"></span></p>
+                <p><strong>Section:</strong> <span id="detailSection"></span></p>
+                <p><strong>Semester:</strong> <span id="detailSemester"></span></p>
+                <p><strong>Gender:</strong> <span id="detailGender"></span></p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
