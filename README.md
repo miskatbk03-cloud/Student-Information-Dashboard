@@ -70,7 +70,7 @@ Student-Information-Dashboard/
 
 API Endpoint: https://dummyjson.com/users
 
-The application uses Fetch API and Async/Await to retrieve external user data and dynamically display it.
+The application uses Fetch API and Async/Await to retrieve external user data and dynamically display it .
 
 ## 🎯 Project Scope
 
