@@ -4,7 +4,7 @@ An interactive, responsive and API-driven Student Information Dashboard develope
 
 ## 🌐 Live Demo
 
-🔗 **[View Live Project](https://YOUR-USERNAME.github.io/Student-Information-Dashboard/)**
+🔗 **[View Live Project](https://miskatbk03-cloud.github.io/Student-Information-Dashboard/)**
 
 🔗 **[GitHub Repository](https://github.com/YOUR-USERNAME/Student-Information-Dashboard)**
 
